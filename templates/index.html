@@ -1,5 +1,93 @@
-<h1>Hola mundo :D</h1>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bienvenido — Retro Neon</title>
 
+
+<!-- Google Pixel-ish Font -->
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+<!-- Tailwind CDN (play-cdn) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+
+<style>
+/* Small extra styles for neon glow and scanline */
+:root{
+--neon-1: #2dff96;
+--neon-2: #6bfffa;
+--grid: rgba(7, 205, 250, 0.884);
+--bg-dark: #000000;
+}
+body{ background: radial-gradient(circle at 10% 10%, rgba(107,255,250,0.04), transparent 10%), linear-gradient(180deg, #0b0710 0%, #020005 100%); }
+.neon-text{ text-shadow: 0 0 6px rgba(255,45,149,0.2), 0 0 20px rgba(107,255,250,0.06); }
+.title-neon{ text-shadow: 0 0 6px var(--neon-1), 0 0 30px var(--neon-1), 0 0 60px rgba(255,45,149,0.2); }
+.subtitle-neon{ text-shadow: 0 0 6px var(--neon-2), 0 0 18px rgba(107,255,250,0.12); }
+
+
+
+/* Grid floor */
+.grid-floor{
+background-image: linear-gradient(180deg, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size: 40px 40px, 40px 40px;
+}
+
+
+/* Scanline animation */
+.scanline:before{
+content: '';
+position: absolute;
+left: 0; right: 0; top: -30%; bottom: -30%;
+background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02), rgba(0,0,0,0.15));
+mix-blend-mode: overlay;
+transform: translateY(-100%);
+animation: scan 6s linear infinite;
+pointer-events: none;
+}
+@keyframes scan{ 0%{ transform: translateY(-100%);} 50%{ transform: translateY(100%);} 100%{ transform: translateY(200%);} }
+
+
+/* Subtle flicker for neon */
+@keyframes flicker{
+0%,19%,21%,50%,54%,100%{ opacity:1; filter:brightness(1);}
+20%,22%,53%{ opacity:0.85; filter:brightness(0.85);}
+}
+.flicker{ animation: flicker 3s infinite; }
+
+
+</style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-white px-6 py-12 relative overflow-hidden">
+
+
+<!-- Decorative corners -->
+<div class="absolute inset-0 pointer-events-none">
+<svg class="absolute top-8 left-8 opacity-20" width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="96" height="96" rx="6" stroke="url(#g1)" stroke-width="1"/>
+<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff2d95"/><stop offset="1" stop-color="#6bfffa"/></linearGradient></defs>
+</svg>
+<svg class="absolute bottom-8 right-8 opacity-20" width="140" height="140" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="50" cy="50" r="40" stroke="url(#g2)" stroke-width="1" />
+<defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6bfffa"/><stop offset="1" stop-color="#ff2d95"/></linearGradient></defs>
+</svg>
+</div>
+
+
+<div class="max-w-4xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+
+
+<!-- Left: Title + CTA -->
+<section class="p-8 lg:p-12 bg-[rgba(255,255,255,0.02)] rounded-2xl backdrop-blur-sm border border-[rgba(255,255,255,0.03)] shadow-2xl scanline">
+<h1 class="font-[\'Press_Start_2P\'] title-neon text-3xl lg:text-4xl leading-tight mb-4">HOLA, SOY HIRU.
+ESTUDIANTE DE INGENIERÍA EN SOFTWARE.</h1>
+<p class="neon-text text-sm lg:text-base mb-6">Bienvenido a mi espacio web personal, donde comparto mis proyectos y aprendizajes en el mundo de la programación y el desarrollo de software. ¡Explora y descubre más sobre mí!</p>
+<p class="subtitle-neon text-sm lg:text-base mb-6">Te amo yaz! 😍 </p>
+<a href ="/sobremi" class="inline-block px-6 py-3 bg-[rgba(45,255,150,0.1)] border border-[rgba(45,255,150,0.3)] rounded-lg neon-text hover:bg-[rgba(45,255,150,0.2)] hover:shadow-[0_0_10px_rgba(45,255,150,0.6)] transition-all text-sm lg:text-base font-medium">SOBRE MÍ</a>
+</section>
+</html>
 
 
 <!-- This is a comment in HTML 
