@@ -22,4 +22,7 @@ class PantallaInicio(Resource):
 class Despedida(Resource):
     def get(self):
         return 'Gracias por visitarnos, hasta pronto!'
+
+#podemos crear mas clases que hereden de Resource
+#cada clase sera un recurso diferente de nuestra API    
     

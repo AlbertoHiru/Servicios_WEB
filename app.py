@@ -21,3 +21,7 @@ crear_rutas(api)
 #del objeto app ejecutamos el metodo run
 
 app.run(port=8080, debug=True)
+#el metodo run recibe dos parametros opcionales
+#port: el puerto en el que se va a ejecutar la aplicación
+#debug: si se pone en True, cada vez que se haga un cambio en el código
+#se reiniciará automáticamente la aplicación

@@ -15,4 +15,6 @@ def crear_rutas(api):
     api.add_resource(Despedida, '/despedida')
 
 
-#
+    #podemos agregar mas rutas a otros recursos
+    #api.add_resource(NombreRecurso, '/ruta')
+    
