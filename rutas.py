@@ -1,10 +1,13 @@
 #rutas de acceso a los recursos de mi servidor web
 
-from recursos import *
+from recursos import Despedida as Despedida, HelloWorld as HelloWorld, sobremi as sombremi,PantallaInicio as PantallaInicio, Resource as Resource, make_response as make_response, render_template as render_template
 
 
 def crear_rutas(api):
-        #Quiero que pueda acceder a este recursoa traves de una URL
+        #Quiero que pueda acceder a este recursoa traves de una URLclass Despedida(Resource):
+    def get(self):
+        print("adios")
+        return 'Gracias por visitarnos, hasta pronto!'
     #1. el recurso que va a ejecutar
     #2. la URL a la que va a estar asociado ese recurso
     api.add_resource(HelloWorld, '/hello')
@@ -13,6 +16,11 @@ def crear_rutas(api):
     api.add_resource(PantallaInicio, '/')
 
     api.add_resource(Despedida, '/despedida')
+
+    api.add_resource(sombremi, '/sobremi')
+
+
+
 
 
     #podemos agregar mas rutas a otros recursos
