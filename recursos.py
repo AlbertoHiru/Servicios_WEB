@@ -16,12 +16,20 @@ class PantallaInicio(Resource):
         #renderizamos el contenido del archivo index.html
 
         #retornamos el contenido renderizado
-        return make_response() 
+        return make_response(contenido) 
 
     
 class Despedida(Resource):
     def get(self):
-        return 'Gracias por visitarnos, hasta pronto!'
+
+        print('Esto es un texto de prueba')
+        return 'Adios'
+    
+
+class sobremi(Resource):
+    def get(self):
+        contenido = render_template('sobremi.html')
+        return make_response(contenido)
 
 #podemos crear mas clases que hereden de Resource
 #cada clase sera un recurso diferente de nuestra API    
