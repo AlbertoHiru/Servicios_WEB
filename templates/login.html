@@ -1,0 +1,80 @@
+<!-- login--> inicio de sesion -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bosque: '#2e6f4e',
+            bosqueSuave: '#5fa37a',
+            fondo: '#1b1b1b',
+            tarjeta: '#242424'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-fondo via-tarjeta to-bosque/30 flex items-center justify-center px-4 text-gray-200">
+
+  <!-- Card -->
+  <div class="w-full max-w-md bg-tarjeta/90 backdrop-blur-xl rounded-3xl shadow-2xl p-10">
+    
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl font-bold text-bosqueSuave mb-2">Bienvenido de nuevo</h1>
+      <p class="text-gray-400">El café ya está listo ☕</p>
+    </div>
+
+    <!-- Form -->
+    <form class="space-y-6">
+      <div>
+        <label class="block text-sm mb-2 text-gray-300">Correo electrónico</label>
+        <input type="email" placeholder="correo@ejemplo.com"
+          class="w-full px-4 py-3 rounded-xl bg-fondo border border-white/10 focus:outline-none focus:ring-2 focus:ring-bosqueSuave transition" />
+      </div>
+
+      <div>
+        <label class="block text-sm mb-2 text-gray-300">Contraseña</label>
+        <input type="password" placeholder="555555"
+          class="w-full px-4 py-3 rounded-xl bg-fondo border border-white/10 focus:outline-none focus:ring-2 focus:ring-bosqueSuave transition" />
+      </div>
+
+      <div class="flex items-center justify-between text-sm text-gray-400">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" class="accent-bosqueSuave" />
+          Recuérdame
+        </label>
+        <a href="#" class="hover:text-bosqueSuave transition">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit"
+        class="w-full bg-bosque hover:bg-bosqueSuave transition py-3 rounded-xl font-semibold text-lg shadow-lg">
+        Iniciar sesión
+      </button>
+    </form>
+
+    <!-- Divider -->
+    <div class="flex items-center gap-4 my-8">
+      <div class="flex-1 h-px bg-white/10"></div>
+      <span class="text-sm text-gray-500">o</span>
+      <div class="flex-1 h-px bg-white/10"></div>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-sm text-gray-400">
+      ¿No tienes cuenta?
+      <a href="#" class="text-bosqueSuave hover:underline">Regístrate</a>
+    </p>
+
+  </div>
+
+</body>
+</html>
+
