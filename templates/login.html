@@ -1,80 +1,126 @@
-<!-- login--> inicio de sesion -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Iniciar sesión</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
             bosque: '#2e6f4e',
             bosqueSuave: '#5fa37a',
-            fondo: '#1b1b1b',
-            tarjeta: '#242424'
           }
         }
       }
     }
   </script>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-fondo via-tarjeta to-bosque/30 flex items-center justify-center px-4 text-gray-200">
+
+<body class="min-h-screen bg-gray-100 dark:bg-[#121212] transition-colors duration-300 flex items-center justify-center px-4">
+
+  <!-- Toggle theme -->
+  <button id="themeToggle"
+    class="absolute top-6 right-6 text-sm px-4 py-2 rounded-full
+           bg-gray-200 dark:bg-white/10
+           text-gray-800 dark:text-gray-200
+           backdrop-blur hover:scale-105 transition">
+    🌙 / ☀️
+  </button>
 
   <!-- Card -->
-  <div class="w-full max-w-md bg-tarjeta/90 backdrop-blur-xl rounded-3xl shadow-2xl p-10">
-    
-    <!-- Header -->
-    <div class="text-center mb-10">
-      <h1 class="text-3xl font-bold text-bosqueSuave mb-2">Bienvenido de nuevo</h1>
-      <p class="text-gray-400">El café ya está listo ☕</p>
+  <div class="w-full max-w-4xl grid md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
+
+    <!-- Imagen -->
+    <div class="hidden md:block relative">
+      <img
+        src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+        alt="Café"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-bosque/60"></div>
+      <div class="absolute bottom-10 left-10 text-white">
+        <h2 class="text-3xl font-bold mb-2">Bienvenido de nuevo</h2>
+        <p class="opacity-90">El aroma del café te estaba esperando</p>
+      </div>
     </div>
 
     <!-- Form -->
-    <form class="space-y-6">
-      <div>
-        <label class="block text-sm mb-2 text-gray-300">Correo electrónico</label>
-        <input type="email" placeholder="correo@ejemplo.com"
-          class="w-full px-4 py-3 rounded-xl bg-fondo border border-white/10 focus:outline-none focus:ring-2 focus:ring-bosqueSuave transition" />
-      </div>
+    <div class="bg-white dark:bg-[#1c1c1c] p-10 flex flex-col justify-center">
+      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+        Inicia sesión
+      </h1>
+      <p class="text-gray-500 dark:text-gray-400 mb-8">
+        Accede a tu espacio y continúa tu experiencia
+      </p>
 
-      <div>
-        <label class="block text-sm mb-2 text-gray-300">Contraseña</label>
-        <input type="password" placeholder="555555"
-          class="w-full px-4 py-3 rounded-xl bg-fondo border border-white/10 focus:outline-none focus:ring-2 focus:ring-bosqueSuave transition" />
-      </div>
+      <form class="space-y-6">
 
-      <div class="flex items-center justify-between text-sm text-gray-400">
-        <label class="flex items-center gap-2">
-          <input type="checkbox" class="accent-bosqueSuave" />
-          Recuérdame
-        </label>
-        <a href="#" class="hover:text-bosqueSuave transition">¿Olvidaste tu contraseña?</a>
-      </div>
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Correo electrónico
+          </label>
+          <input type="email"
+            placeholder="correo@ejemplo.com"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
 
-      <button type="submit"
-        class="w-full bg-bosque hover:bg-bosqueSuave transition py-3 rounded-xl font-semibold text-lg shadow-lg">
-        Iniciar sesión
-      </button>
-    </form>
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Contraseña
+          </label>
+          <input type="password"
+            placeholder="••••••••"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
 
-    <!-- Divider -->
-    <div class="flex items-center gap-4 my-8">
-      <div class="flex-1 h-px bg-white/10"></div>
-      <span class="text-sm text-gray-500">o</span>
-      <div class="flex-1 h-px bg-white/10"></div>
+        <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" class="accent-bosque" />
+            Recuérdame
+          </label>
+          <a href="#" class="hover:text-bosque transition">
+            ¿Olvidaste tu contraseña?
+          </a>
+        </div>
+
+        <button
+          class="w-full bg-bosque hover:bg-bosqueSuave
+                 text-white py-3 rounded-xl font-semibold text-lg
+                 transition shadow-lg">
+          Iniciar sesión
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
+        ¿No tienes cuenta?
+        <a href="/crear" class="text-bosque hover:underline">
+          Regístrate aquí
+        </a>
+        <a href="/" class="block mt-2 text-bosque hover:underline">
+          Volver al inicio
+      </p>
     </div>
-
-    <!-- Footer -->
-    <p class="text-center text-sm text-gray-400">
-      ¿No tienes cuenta?
-      <a href="#" class="text-bosqueSuave hover:underline">Regístrate</a>
-    </p>
-
   </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle')
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark')
+    })
+  </script>
 
 </body>
 </html>
-

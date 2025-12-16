@@ -1,47 +1,130 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cafetería Bosque</title>
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            bosque: '#2f6f4f',
-            bosqueClaro: '#5fa37a',
-            fondoOscuro: '#1b1b1b',
-            fondoSuave: '#242424'
+            bosque: '#2e6f4e',
+            bosqueSuave: '#5fa37a',
+            fondoOscuro: '#1a1a1a',
+            fondoSuave: '#f5f5f5'
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-gradient-to-br from-fondoOscuro to-fondoSuave text-gray-200">
+<body class="bg-fondoSuave dark:bg-fondoOscuro text-gray-800 dark:text-gray-200 font-sans transition-colors duration-500">
+
+  <!-- Toggle modo -->
+  <div class="fixed top-6 right-6 z-50">
+    <button onclick="document.documentElement.classList.toggle('dark')"
+      class="bg-red text-white px-4 py-2 rounded-xl shadow hover:bg-bosqueSuave transition">
+      🌙 / ☀️
+    </button>
+  </div>
 
   <!-- Hero -->
-  <header class="min-h-screen flex items-center justify-center text-center px-6">
-    <div>
-      <h1 class="text-4xl md:text-6xl font-bold text-bosqueClaro mb-6">
-        Café que nace del silencio
+  <section class="min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+         class="absolute inset-0 w-full h-full object-cover opacity-20 dark:opacity-30" />
+    <div class="relative max-w-5xl text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-bosque mb-6">
+        Café que respira naturaleza
       </h1>
-      <p class="max-w-xl mx-auto text-gray-400 mb-10">
-        Granos seleccionados, aromas profundos y un espacio donde el tiempo camina más lento.
+      <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10">
+        Un equilibrio entre lo intenso del café y la calma del bosque.
       </p>
-      <a href="#menu" class="inline-block bg-bosque hover:bg-bosqueClaro transition px-8 py-3 rounded-2xl font-semibold">
-        Descubrir el menú
+      <a href="#menu"
+         class="inline-block bg-bosque hover:bg-bosqueSuave transition px-8 py-4 rounded-2xl text-lg font-semibold text-white shadow-lg">
+        Explorar sabores
+      </a>
+      <a href="#aboutUs"
+          class="inline-block ml-6 bg-bosque hover:bg-bosqueSuave transition px-8 py-4 rounded-2xl text-lg font-semibold text-white shadow-lg">
+          Sobre nosotros
+        </a>
+
+    </div>
+  </section>
+
+  <!-- Sobre nosotros -->
+  <section id="aboutUs" class="py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <div>
+        <h2 class="text-4xl font-bold text-bosque mb-6">Nuestra esencia</h2>
+        <p class="leading-relaxed text-gray-600 dark:text-gray-300">
+          Inspirados en la luz que se filtra entre los árboles, creamos un espacio
+          donde el café se disfruta sin prisa. Cada taza es una pausa, cada aroma
+          una invitación a quedarte.
+        </p>
+      </div>
+      <div class="relative">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+             class="rounded-3xl shadow-2xl" />
+        <div class="absolute bottom-4 right-4 bg-bosque text-white px-6 py-3 rounded-2xl shadow">
+          🌿 Natural · Artesanal
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menú -->
+  <section id="menu" class="py-24 px-6 bg-gray-100 dark:bg-fondoOscuro">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-bosque mb-16">Nuestro menú</h2>
+      <div class="grid md:grid-cols-3 gap-12">
+
+        <div class="bg-bosqueSuave dark:bg-bosque rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" class="rounded-xl mb-6" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Espresso Bosque</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Intenso, profundo y honesto.</p>
+          <span class="font-bold">$45 MXN</span>
+        </div>
+
+        <div class="bg-bosqueSuave dark:bg-bosque rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition">
+          <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" class="rounded-xl mb-6" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Latte Claro</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Suave, cremoso y equilibrado.</p>
+          <span class="font-bold">$55 MXN</span>
+        </div>
+
+        <div class="bg-bosqueSuave dark:bg-bosque rounded-3xl p-8 shadow-xl hover:-translate-y-2 transition">
+          <img src="https://images.unsplash.com/photo-1522992319-0365e5f11656" class="rounded-xl mb-6" />
+          <h3 class="text-2xl font-semibold text-white mb-2">Cold Brew Verde</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Refrescante con carácter.</p>
+          <span class="font-bold">$60 MXN</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-6 bg-gradient-to-br from-bosque to-bosqueSuave text-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-6">Un refugio con aroma a café</h2>
+      <p class="mb-10 text-lg">
+        Aquí la luz es suave, el verde acompaña y el café hace el resto.
+      </p>
+      <a href="/login" class="inline-block bg-white/20 hover:bg-white/30 transition px-10 py-4 rounded-2xl text-lg font-semibold">
+        Login
       </a>
     </div>
-  </header>
+  </section>
 
-  <!-- About -->
-  <section class="py-24 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-bosqueClaro mb-6">Nuestra esencia</h2>
-        <p class="text-gray-400">
-          Inspirados en el bosque y en la pausa, creamos una cafetería donde cada taza es un ritual
+  <!-- Footer -->
+  <footer class="py-10 text-center text-gray-500 text-sm">
+    © 2025 Cafetería Bosque · Donde el café y la calma se encuentran
+  </footer>
+
+</body>
+</html>

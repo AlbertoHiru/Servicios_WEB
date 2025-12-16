@@ -3,49 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Regístrate · Cafetería Bosque</title>
-  <!-- Tailwind CDN -->
+  <title>Regístrate</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            bosque: '#2f6f4f',
-            bosqueClaro: '#5fa37a',
-            fondoOscuro: '#1b1b1b',
-            fondoSuave: '#242424'
+            bosque: '#2e6f4e',
+            bosqueSuave: '#5fa37a',
           }
         }
       }
     }
   </script>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-fondoOscuro to-fondoSuave text-gray-200 flex items-center justify-center px-6">
 
-  <div class="w-full max-w-4xl bg-fondoSuave rounded-3xl shadow-2xl overflow-hidden grid md:grid-cols-2">
+<body class="min-h-screen bg-gray-100 dark:bg-[#121212] transition-colors duration-300 flex items-center justify-center px-4">
 
-    <!-- Lado visual -->
-    <div class="hidden md:flex flex-col justify-center p-12 bg-gradient-to-br from-bosque to-[#1f4d38]">
-      <h2 class="text-4xl font-bold mb-6">Bienvenido al bosque</h2>
-      <p class="text-green-100 mb-10">
-        Crear una cuenta es el primer paso para guardar tus rituales,
-        descubrir nuevos sabores y volver siempre a casa.
-      </p>
-      <ul class="space-y-4 text-green-100">
-        <li>☕ Guarda tus bebidas favoritas</li>
-        <li>🌿 Accede a experiencias exclusivas</li>
-        <li>🕰️ Un espacio solo para ti</li>
-      </ul>
+  <!-- Toggle theme -->
+  <button id="themeToggle"
+    class="absolute top-6 right-6 text-sm px-4 py-2 rounded-full
+           bg-gray-200 dark:bg-white/10
+           text-gray-800 dark:text-gray-200
+           backdrop-blur hover:scale-105 transition">
+    🌙 / ☀️
+  </button>
+
+  <!-- Card -->
+  <div class="w-full max-w-4xl grid md:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
+
+    <!-- Imagen -->
+    <div class="hidden md:block relative">
+      <img
+        src="https://images.unsplash.com/photo-1511920170033-f8396924c348"
+        alt="Café y calma"
+        class="h-full w-full object-cover"
+      />
+      <div class="absolute inset-0 bg-bosque/60"></div>
+      <div class="absolute bottom-10 left-10 text-white">
+        <h2 class="text-3xl font-bold mb-2">Únete al bosque</h2>
+        <p class="opacity-90">Una cuenta, muchas pausas bien tomadas</p>
+      </div>
     </div>
 
-    <!-- Formulario -->
-    <div class="p-10 md:p-12">
-      <div class="mb-10">
-        <h1 class="text-3xl font-bold text-bosqueClaro">Crear cuenta</h1>
-        <p class="text-gray-400 mt-2">Regístrate y forma parte del ritual</p>
-      </div>
+    <!-- Form -->
+    <div class="bg-white dark:bg-[#1c1c1c] p-10 flex flex-col justify-center">
+      <h1 class="text-3xl font-bold mb-2 text-gray-800 dark:text-gray-100">
+        Regístrate aquí
+      </h1>
+      <p class="text-gray-500 dark:text-gray-400 mb-8">
+        Crea tu cuenta y comienza tu experiencia
+      </p>
 
       <form class="space-y-6">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Nombre completo
+          </label>
+          <input type="text"
+            placeholder="Tu nombre"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Correo electrónico
+          </label>
+          <input type="email"
+            placeholder="correo@ejemplo.com"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Contraseña
+          </label>
+          <input type="password"
+            placeholder="••••••••"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
+
+        <div>
+          <label class="block text-sm mb-2 text-gray-600 dark:text-gray-300">
+            Confirmar contraseña
+          </label>
+          <input type="password"
+            placeholder="••••••••"
+            class="w-full px-4 py-3 rounded-xl
+                   bg-gray-100 dark:bg-[#121212]
+                   border border-gray-300 dark:border-white/10
+                   focus:outline-none focus:ring-2 focus:ring-bosque
+                   transition" />
+        </div>
+
+        <button
+          class="w-full bg-bosque hover:bg-bosqueSuave
+                 text-white py-3 rounded-xl font-semibold text-lg
+                 transition shadow-lg">
+          Crear cuenta
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-8">
+        ¿Ya tienes cuenta?
+        <a href="/login" class="text-bosque hover:underline">
+          Inicia sesión
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle')
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark')
+    })
+  </script>
+
+</body>
+</html>
