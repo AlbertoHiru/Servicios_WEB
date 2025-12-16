@@ -24,12 +24,18 @@ class Despedida(Resource):
 
         print('Esto es un texto de prueba')
         return 'Adios'
+class login(Resource):
+    def get(self):
+        contenido = render_template('login.html')
+        return make_response(contenido) 
+class crear(Resource):
+    def get(self):
+        contenido = render_template('crear.html')
+        return make_response(contenido)
+    def post(self):
+        return 'Usuario creado exitosamente'
     
 
-class sobremi(Resource):
-    def get(self):
-        contenido = render_template('sobremi.html')
-        return make_response(contenido)
 
 #podemos crear mas clases que hereden de Resource
 #cada clase sera un recurso diferente de nuestra API    
