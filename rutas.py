@@ -1,6 +1,6 @@
 #rutas de acceso a los recursos de mi servidor web
 
-from recursos import HelloWorld, PantallaInicio, Despedida, login, crear
+from recursos import HelloWorld, PantallaInicio, Despedida, login, crear, hub
 
 
 
@@ -20,7 +20,9 @@ def crear_rutas(api):
 
     api.add_resource(login, '/login')
 
-    api.add_resource(crear, '/crear')   
+    api.add_resource(crear, '/crear') 
+
+    api.add_resource(hub, '/hub') 
 
 
 
