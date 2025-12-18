@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi espacio · Cafetería Bosque</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bosque: '#2e6f4e',
+            bosqueSuave: '#5fa37a',
+            fondoOscuro: '#1a1a1a',
+            fondoSuave: '#f5f5f5'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-fondoSuave dark:bg-fondoOscuro text-gray-800 dark:text-gray-200 transition-colors duration-500 min-h-screen">
+
+  <!-- Top bar -->
+  <header class="flex items-center justify-between px-8 py-6">
+    <h1 class="text-2xl font-bold text-bosque">
+      🌲 Cafetería Bosque
+    </h1>
+
+    <div class="flex items-center gap-4">
+      <button onclick="document.documentElement.classList.toggle('dark')"
+        class="px-4 py-2 rounded-xl bg-gray-200 dark:bg-white/10 hover:scale-105 transition">
+        🌙 / ☀️
+      </button>
+      <a href="/"
+        class="px-4 py-2 rounded-xl bg-bosque text-white hover:bg-bosqueSuave transition">
+        Cerrar sesión
+      </a>
+    </div>
+  </header>
+
+  <!-- Welcome -->
+  <section class="px-8 mt-10">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold mb-4">
+        Bienvenido a tu espacio personal ☕
+      </h2>
+      <p class="text-gray-600 dark:text-gray-400 text-lg">
+        Este es tu espacio. Sin prisa. Sin ruido. Solo café y calma.
+      </p>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <section class="px-8 py-16">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-10">
+
+      <!-- Perfil -->
+      <div class="rounded-3xl p-8 bg-white dark:bg-[#1c1c1c] shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-semibold text-bosque mb-3">
+          Mi perfil
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Revisa o actualiza tu información personal.
+        </p>
+        <a href="#"
+          class="inline-block text-bosque hover:underline font-semibold">
+          Ver perfil →
+        </a>
+      </div>
+
+      <!-- Favoritos -->
+      <div class="rounded-3xl p-8 bg-white dark:bg-[#1c1c1c] shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-semibold text-bosque mb-3">
+          Mis cafés
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Tus bebidas favoritas, siempre a un clic.
+        </p>
+        <a href="#"
+          class="inline-block text-bosque hover:underline font-semibold">
+          Ver favoritos →
+        </a>
+      </div>
+
+      <!-- Visitas -->
+      <div class="rounded-3xl p-8 bg-white dark:bg-[#1c1c1c] shadow-xl hover:-translate-y-1 transition">
+        <h3 class="text-2xl font-semibold text-bosque mb-3">
+          Mis visitas
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 mb-6">
+          Historial de pausas bien tomadas.
+        </p>
+        <a href="#"
+          class="inline-block text-bosque hover:underline font-semibold">
+          Ver historial →
+        </a>“
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="px-8 pb-20">
+    <div class="max-w-3xl mx-auto text-center bg-gradient-to-br from-bosque to-bosqueSuave text-white p-10 rounded-3xl shadow-2xl">
+      <p class="text-xl italic">
+        “El café no se toma, se habita.”
+      </p>
+      <span class="block mt-4 opacity-80">
+        — Cafetería Bosque
+      </span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm text-gray-500 py-8">
+    © 2025 Cafetería Bosque · Tu refugio digital
+  </footer>
+
+</body>
+</html>
